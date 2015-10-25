@@ -1,0 +1,39 @@
+VIM - Vi IMproved 7.3 (2010 Aug 15, compiled Jun 14 2013 18:04:30)
+Included patches: 1-1195
+Compiled by freak@affchen
+Normal version without GUI.  Features included (+) or not (-):
+-arabic          +file_in_path    -mouse_sgr       +tag_binary
++autocmd         +find_in_path    -mouse_sysmouse  +tag_old_static
+-balloon_eval    +float           -mouse_urxvt     -tag_any_white
+-browse          +folding         +mouse_xterm     -tcl
++builtin_terms   -footer          +multi_byte      +terminfo
++byte_offset     +fork()          +multi_lang      +termresponse
++cindent         -gettext         -mzscheme        +textobjects
+-clientserver    -hangul_input    +netbeans_intg   +title
+-clipboard       +iconv           +path_extra      -toolbar
++cmdline_compl   +insert_expand   -perl            +user_commands
++cmdline_hist    +jumplist        +persistent_undo +vertsplit
++cmdline_info    -keymap          +postscript      +virtualedit
++comments        -langmap         +printer         +visual
+-conceal         +libcall         -profile         +visualextra
++cryptv          +linebreak       -python          +viminfo
+-cscope          +lispindent      -python3         +vreplace
++cursorbind      +listcmds        +quickfix        +wildignore
++cursorshape     +localmap        +reltime         +wildmenu
++dialog_con      -lua             -rightleft       +windows
++diff            +menu            +ruby            +writebackup
++digraphs        +mksession       +scrollbind      -X11
+-dnd             +modify_fname    +signs           -xfontset
+-ebcdic          +mouse           +smartindent     -xim
+-emacs_tags      -mouseshape      -sniff           -xsmp
++eval            -mouse_dec       +startuptime     -xterm_clipboard
++ex_extra        -mouse_gpm       +statusline      -xterm_save
++extra_search    -mouse_jsbterm   -sun_workshop    
+-farsi           -mouse_netterm   +syntax          
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+  fall-back for $VIM: "/usr/local/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -I/usr/local/include  -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1      
+Linking: gcc   -L. -Wl,-z,relro -rdynamic -Wl,-export-dynamic  -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -ldl       -lruby-1.9.1 -lpthread -lrt -ldl -lcrypt -lm  -L/usr/lib   
