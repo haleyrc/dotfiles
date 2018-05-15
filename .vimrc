@@ -29,7 +29,6 @@ set nowrap
 " set background=dark
 " set t_Co=256
 colorscheme northpole
-let g:airline_theme = 'northpole'
 " Ignored in Neovim 0.1.5 and above
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
@@ -55,6 +54,10 @@ nnoremap <leader>c :GoCoverageToggle<cr>
 let g:go_fmt_command = "goimports"
 " Use camel case when converting tags
 let g:go_addtags_transform = "camelcase"
+" Highlight function and method calls
+let g:go_highlight_function_calls = 1
+" Open godoc for entity at cursor
+nnoremap <leader>d :GoDoc<cr>
 
 " Highlighting
 let g:go_highlight_types = 1
@@ -103,6 +106,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Manu-sh/NeonVimColorscheme'
 
 call plug#end()
 
