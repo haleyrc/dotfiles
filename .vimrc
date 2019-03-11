@@ -1,5 +1,8 @@
 syntax enable
 
+let mapleader = ","
+set t_ut=
+
 " General
 set encoding=utf-8
 filetype plugin indent on
@@ -24,6 +27,12 @@ set ruler
 set cursorline
 set nowrap
 
+" QuickFix
+augroup quickfix
+	autocmd!
+	autocmd FileType qf setlocal wrap
+augroup END
+
 " Colors
 " set term=xterm
 " set background=dark
@@ -47,7 +56,8 @@ function! s:build_go_files()
 	endif
 endfunction
 " Run our smart build command
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+" autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>b :make build <Bar> copen<CR>
 " Toggle coverage visualization on and off
 nnoremap <leader>c :GoCoverageToggle<cr>
 " Run goimports instead of gofmt
@@ -58,6 +68,9 @@ let g:go_addtags_transform = "camelcase"
 let g:go_highlight_function_calls = 1
 " Open godoc for entity at cursor
 nnoremap <leader>d :GoDoc<cr>
+nnoremap <leader>gd :GoDecls<cr>
+nnoremap <leader>gdd :GoDeclsDir<cr>
+nnoremap <leader>ln :lnext<cr>
 
 " Highlighting
 let g:go_highlight_types = 1
@@ -80,7 +93,6 @@ let g:NERDTreeIndicatorMapCustom = {
 \ }
 
 " Shortcuts
-let mapleader = ","
 inoremap jj <ESC>
 " Clear search highlights
 nnoremap <leader><space> :noh<cr>
@@ -107,73 +119,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Manu-sh/NeonVimColorscheme'
+Plug 'ctrlpvim/ctrlp'
 
 call plug#end()
-
-" function! RunFile()
-"   if &ft == "go"
-"     write
-"     !go run %
-"   elseif &ft == "python"
-"     write
-"     !python %
-"   endif
-" endfunction
-" 
-" set nocompatible
-" set modelines=0
-" set scrolloff=3
-" set autoindent
-" set showmode
-" set showcmd
-" set hidden
-" set wildmenu
-" set wildmode=list:longest
-" set visualbell
-" set ttyfast
-" set backspace=indent,eol,start
-" set laststatus=2
-" set undofile
-" " nnoremap / /\v
-" " vnoremap / /\v
-" set gdefault
-" set incsearch
-" set showmatch
-" nnoremap <tab> %
-" vnoremap <tab> %
-" "nnoremap <leader>r :!python %<cr>
-" set wrap
-" set textwidth=79
-" set formatoptions=qrn1
-" inoremap <F1> <ESC>
-" nnoremap <F1> <ESC>
-" vnoremap <F1> <ESC>
-" au FocusLost * :wa
-" nnoremap <leader>ft Vatzf
-" 
-" autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-" autocmd! BufNewFile,BufRead *.go setlocal ft=go
-" 
-" nnoremap <leader>r :call RunFile()<cr>
-" 
-" " Open files with <leader>f
-" map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-" " Open files limited to current directory
-" map <leader>gf :CommandTFlush\|:CommandT %%<cr>
-" 
-" 
-" map <leader>o Go
-" 
-" " Make current window big, leave others some context
-" set winwidth=84
-" set winheight=10
-" set winminheight=10
-" set winheight=999
-" 
-" 
-" map <leader>h :wincmd h<CR>
-" map <leader>j :wincmd j<CR>
-" map <leader>k :wincmd k<CR>
-" map <leader>l :wincmd l<CR>
-" 
-" iab breka break
