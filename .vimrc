@@ -108,6 +108,8 @@ nnoremap <leader>p :cprevious<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
+" Flutter
+
 " Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
@@ -119,6 +121,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Manu-sh/NeonVimColorscheme'
-Plug 'ctrlpvim/ctrlp'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 
 call plug#end()
